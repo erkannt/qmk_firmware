@@ -58,9 +58,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer */
 [BASE] = LAYOUT_gergo(
     KC_NO, KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                               KC_Y,  KC_U,  KC_I,    KC_O,   KC_P,    KC_NO,
-    KC_NO, GU_A,  CT_S,  AL_D,  KC_F,  KC_G,  KC_NO,              C(KC_A), KC_H,  KC_J,  KC_K,    CT_L,   GU_SCLN, KC_QUOT,
+    KC_NO, GU_A,  CT_S,  AL_D,  KC_F,  KC_G,  KC_NO,                KC_NO, KC_H,  KC_J,  KC_K,    CT_L,   GU_SCLN, KC_QUOT,
     KC_NO, KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,  KC_NO, KC_NO,  KC_NO, KC_NO, KC_N,  KC_M,  KC_COMM, KC_DOT, KC_SLSH, KC_MINS,
-                            KC_NO, KC_NO, OSL_SFT, SYM_ENT,  OSL_SYM, NUM_SPC, OSL_SUP,  KC_NO
+                          KC_NO, C(KC_A), OSL_SFT, SYM_ENT,  OSL_SYM, NUM_SPC, OSL_SUP,  KC_NO
     ),
 /* Keymap 1: Symbols layer
  *
