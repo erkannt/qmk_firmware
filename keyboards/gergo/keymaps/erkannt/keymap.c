@@ -38,20 +38,17 @@ enum customKeycodes {
 enum combos {
   WE_ESC,
   IO_BSP,
-  KL_TAB,
-  SD_TAB
+  KL_TAB
 };
 
 const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM kl_combo[] = {KC_K, KC_L, COMBO_END};
-const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [WE_ESC] = COMBO(we_combo, KC_ESC),
   [IO_BSP] = COMBO(io_combo, KC_BSPC),
-  [KL_TAB] = COMBO(kl_combo, KC_TAB),
-  [SD_TAB] = COMBO(sd_combo, KC_TAB)
+  [KL_TAB] = COMBO(kl_combo, KC_TAB)
 };
 
 
@@ -136,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------'       `--------------'
  */
 [SUPR] = LAYOUT_gergo(
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                             KC_TRNS, G(KC_1), G(KC_3), G(KC_5), G(KC_7), KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                           G(KC_TAB), G(KC_1), G(KC_3), G(KC_5), G(KC_7), KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                           KC_TRNS, KC_TRNS, G(KC_2), G(KC_4), G(KC_6), G(KC_8), KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS, G(KC_N), S(KC_DEL), KC_TRNS, KC_TRNS, KC_TRNS,
                                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
