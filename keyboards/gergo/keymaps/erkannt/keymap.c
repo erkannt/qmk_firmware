@@ -27,7 +27,6 @@ enum customKeycodes {
 #define OSL_SUP   OSL(SUPR)
 
 // home row mods.
-#define CT_A    LCTL_T(KC_A)
 #define CT_X    LCTL_T(KC_X)
 #define CT_SCLN RCTL_T(KC_SCLN)
 #define AL_C    LALT_T(KC_C)
@@ -56,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer */
 [BASE] = LAYOUT_gergo(
     KC_NO, KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                               KC_Y,  KC_U,  KC_I,    KC_O,   KC_P,    KC_NO,
-    KC_NO, CT_A,  KC_S,  KC_D,  KC_F,  KC_G,  KC_NO,                KC_NO, KC_H,  KC_J,  KC_K,    KC_L,   CT_SCLN, KC_QUOT,
+    KC_NO, KC_A,  KC_S,  KC_D,  KC_F,  KC_G,  KC_NO,                KC_NO, KC_H,  KC_J,  KC_K,    KC_L,   CT_SCLN, KC_QUOT,
     KC_NO, GU_Z,  CT_X,  AL_C,  KC_V,  KC_B,  KC_NO, KC_NO,  KC_NO, KC_NO, KC_N,  KC_M,  KC_COMM, KC_DOT, GU_SLSH, KC_MINS,
                           KC_NO, C(KC_A), OSL_SFT, SYM_ENT,  OSL_SYM, NUM_SPC, OSL_SUP,  KC_NO
     ),
