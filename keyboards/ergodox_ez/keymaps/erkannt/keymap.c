@@ -29,22 +29,22 @@ enum combos {
   WE_ESC,
   IO_BSP,
   KL_TAB,
-  JK_DAS,
-  UI_QUT,
+  JL_DAS,
+  UO_QUT,
 };
 
 const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM kl_combo[] = {KC_K, KC_L, COMBO_END};
-const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM jl_combo[] = {KC_J, KC_L, COMBO_END};
+const uint16_t PROGMEM uo_combo[] = {KC_U, KC_O, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [WE_ESC] = COMBO(we_combo, KC_ESC),
   [IO_BSP] = COMBO(io_combo, KC_BSPC),
   [KL_TAB] = COMBO(kl_combo, KC_TAB),
-  [JK_DAS] = COMBO(jk_combo, KC_MINS),
-  [UI_QUT] = COMBO(ui_combo, KC_QUOT),
+  [JL_DAS] = COMBO(jl_combo, KC_MINS),
+  [UO_QUT] = COMBO(uo_combo, KC_QUOT),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
