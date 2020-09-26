@@ -17,6 +17,9 @@ DEBUG_MATRIX		 = yes
 # Combo Stuff
 COMBO_ENABLE = yes
 
+# Unicode Stuff
+UNICODEMAP_ENABLE = yes
+
 # A bunch of stuff that you shouldn't touch unless you
 # know what you're doing.
 #

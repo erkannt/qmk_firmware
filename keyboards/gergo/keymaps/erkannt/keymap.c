@@ -12,6 +12,7 @@
 #define SYMB 1 // symbols
 #define NUMB 2 // numbers/motion
 #define SUPR 3 // WM commands/macros
+#define UNIC 4 // special chars
 
 // Blank template at the bottom
 
@@ -56,14 +57,35 @@ combo_t key_combos[COMBO_COUNT] = {
   [UO_QUT] = COMBO(uo_combo, KC_QUOT),
 };
 
+// Unicode
+enum unicode_names {
+    AUML,
+    OUML,
+    UUML,
+    CAUML,
+    COUML,
+    CUUML,
+    SZET
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [AUML]  = 0x00E4, // ä
+    [OUML]  = 0x00F6, // ö
+    [UUML]  = 0x00FC, // ü
+    [CAUML] = 0x00C4, // Ä
+    [COUML] = 0x00D6, // Ö
+    [CUUML] = 0x00DC, // Ü
+    [SZET]  = 0x00DF,  // ß
+};
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer */
 [BASE] = LAYOUT_gergo(
-    KC_DEL, KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                               KC_Y,  KC_U,  KC_I,    KC_O,   KC_P,    C(KC_D),
-    KC_F9,  KC_A,  KC_S,  KC_D,  KC_F,  KC_G,  KC_NO,                KC_NO, KC_H,  KC_J,  KC_K,    KC_L,   CT_SCLN, KC_NO,
-    KC_F12, GU_Z,  CT_X,  AL_C,  KC_V,  KC_B,  KC_NO, KC_NO,  KC_NO, KC_NO, KC_N,  KC_M,  KC_COMM, KC_DOT, GU_SLSH, KC_NO,
-                          KC_NO, C(KC_A), OSL_SFT, SYM_ENT,  OSL_SYM, NUM_SPC, OSL_SUP,  KC_NO
+    KC_DEL,      KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                               KC_Y,  KC_U,  KC_I,    KC_O,   KC_P,    C(KC_D),
+    KC_F9,       KC_A,  KC_S,  KC_D,  KC_F,  KC_G,  KC_NO,                KC_NO, KC_H,  KC_J,  KC_K,    KC_L,   CT_SCLN, MEH(KC_F10),
+    MEH(KC_F12), GU_Z,  CT_X,  AL_C,  KC_V,  KC_B,  KC_NO, KC_NO,  KC_NO, KC_NO, KC_N,  KC_M,  KC_COMM, KC_DOT, GU_SLSH, MEH(KC_F11),
+                          KC_NO, C(KC_A), OSL_SFT, SYM_ENT,  OSL_SYM, NUM_SPC, OSL_SUP,  OSL(UNIC)
     ),
 /* Keymap 1: Symbols layer
  *
@@ -142,9 +164,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                           KC_TRNS, KC_TRNS, G(KC_2), G(KC_4), G(KC_6), G(KC_8), KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS, G(KC_N), S(KC_DEL), KC_TRNS, KC_TRNS, KC_TRNS,
                                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+
+/* Unicode */
+[UNIC] = LAYOUT_gergo(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                             KC_TRNS, XP(UUML, CUUML), KC_TRNS, XP(OUML, COUML), KC_TRNS, KC_TRNS,
+    KC_TRNS, XP(AUML, CAUML), X(SZET), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                                        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     )
 };
-
 
 /* Keymap template
  *
